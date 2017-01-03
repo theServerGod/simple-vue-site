@@ -1,0 +1,45 @@
+{
+  "name": "simple-vue-site",
+  "version": "1.0.0",
+  "description": "Project template/seed for static sites and small web applications using Vue.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --progress --watch --config webpack.config.js",
+    "build": "webpack --progress --config webpack.config.js",
+    "build:thumbnails": "(cd ./app/assets/gallery && ./generate_thumbs.bash)"
+  },
+  "author": "Jake Skoric IT Solutions",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "express-log-url": "^1.0.4",
+    "helmet": "^3.2.0",
+    "lodash": "^4.17.2",
+    "mailgun-js": "^0.7.15",
+    "validator": "^6.2.0",
+    "vue": "^2.1.8",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "clean-webpack-plugin": "^0.1.14",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "favicons-webpack-plugin": "0.0.7",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^10.0.2",
+    "vue-style-loader": "^1.0.0",
+    "vue-template-compiler": "^2.1.8",
+    "webpack": "^2.1.0-beta.28"
+  }
+}

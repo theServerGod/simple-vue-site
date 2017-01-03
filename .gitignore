@@ -1,0 +1,24 @@
+# Logs
+logs/*
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Optional npm cache directory
+.npm
+
+!.gitkeep
+.~lock.*
+.DS_Store
+.idea
+*.swp
+dist/
+node_modules/
+tmp
