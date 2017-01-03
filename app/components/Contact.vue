@@ -2,7 +2,7 @@
 	<section class="contact">
 		<!-- FIXME: Contact form test {{{ -->
 		<transition name="fade">
-			<form v-if="!isSuccess" name="contactForm" method="POST" v-on:submit="submit" v-on:submit.prevent>
+			<form v-if="!isSuccess" name="contactForm" method="POST" v-on:submit.prevent="submit">
 				<div v-if="message" class="alert alert-error">{{ message }}</div>
 
 				<input type="text" name="name" placeholder="Name" v-model="contactForm.name" required>
