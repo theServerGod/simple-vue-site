@@ -10,6 +10,7 @@ var colors = require('chalk');
 var compression = require('compression');
 var express = require('express');
 var helmet = require('helmet');
+var history = require('connect-history-api-fallback');
 var Mailgun = require('mailgun-js');
 var path = require('path');
 var validator = require('validator');
@@ -92,9 +93,9 @@ app.get('/', (req, res) => res.sendFile(path.join(config.DOCUMENT_ROOT, 'dist/in
 app.use(express.static(config.DIST));
 
 /**
- * Reroute all other GET requests to index, to be handled by front end router
+ * Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
  */
-app.get('*', (req, res) => res.sendFile(path.join(config.DOCUMENT_ROOT, 'dist/index.html')));
+app.use(history());
 // }}}
 
 // Error handling {{{
