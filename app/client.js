@@ -27,7 +27,12 @@ const router = new VueRouter({
 		{path: '*', component: Home, beforeEnter: (to, from, next) => next('/')} // Handle all other routes; nav guard to always redirect to `/`
 	],
 	mode: 'history',
-	linkActiveClass: 'active'
+	linkActiveClass: 'active',
+	scrollBehavior(to, from, savedPosition) {
+		if (to.hash) return {selector: to.hash};
+		if (savedPosition) return savedPosition;
+		return {x: 0, y: 0}; // Default to scrolling to top of page
+	}
 });
 
 // Instantiate Vue
