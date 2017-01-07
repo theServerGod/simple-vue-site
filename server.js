@@ -20,6 +20,7 @@ app.use(bodyParser.json({limit: '16mb'}));
 app.use(bodyParser.urlencoded({limit: '16mb', extended: false}));
 app.use(compression());
 app.use(helmet());
+app.use(history()); // Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
 app.use(require('express-log-url'));
 
 const config = {
@@ -91,11 +92,6 @@ app.get('/', (req, res) => res.sendFile(path.join(config.DOCUMENT_ROOT, 'dist/in
  * serve static files over Nginx or Apache, for example.
  */
 app.use(express.static(config.DIST));
-
-/**
- * Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
- */
-app.use(history());
 // }}}
 
 // Error handling {{{
