@@ -18,7 +18,7 @@ npm run start
 ```
 
 ### Production
-Typically, all that is needed for app deployment are the contents of the build directory `dist/`  and the `server.js` file. Otherwise, if you wish to perform builds on the server, you need to pull in the entire repo/project codebase.
+Typically, all that is needed for app deployment are the contents of the build directory `dist/`, the `server.js` file, and the `package.json` file. Otherwise, if you wish to perform builds on the server, you need to pull in the entire repo/project codebase.
 
 ```bash
 # Install production dependencies (assuming `dist/` already built)

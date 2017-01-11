@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Gallery from './Gallery.vue';
-import Contact from './Contact.vue';
+import Gallery from './Gallery.section.vue';
+import Contact from './Contact.section.vue';
 
 export default {
 	name: 'home',

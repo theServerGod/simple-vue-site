@@ -1,7 +1,7 @@
 /**
 * Webpack configuration file intended for static and small web apps
 *
-* @author Jake Skoric <jake@jsitsolutions.biz>
+* @author Jake Skoric <info@jakeskoric.com>
 */
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -24,6 +24,7 @@ module.exports = function(env) {
 		resolve: {
 			alias: {
 				'vue$': 'vue/dist/vue.common.js',
+				// 'jquery': path.resolve(__dirname, 'node_modules/jquery/src/jquery'), // If you need jQuery in your project, use this line
 			}
 		},
 		module: {

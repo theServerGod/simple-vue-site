@@ -14,7 +14,7 @@ export default {
 	name: 'app',
 	data() {
 		return {
-			title: 'Test App',
+			title: 'Simple Vue Site',
 		};
 	},
 	components: {
