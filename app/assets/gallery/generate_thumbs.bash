@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Generate thumbnails for images in current directory.
-# This script relies on `convert`, as provided by the ImageMagick library
+# NOTE: This script relies on `convert`, as provided by the ImageMagick library
 #
-# @author Jake Skoric <jake@jsitsolutions.biz>
+# @author Jake Skoric <info@jakeskoric.com>
 
 WIDTH=200 # Thumbnail width, in pixels
 HEIGHT=100 # Thubmanil height, in pixels
