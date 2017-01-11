@@ -131,7 +131,7 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(config.DOCUMENT_ROOT, 'dist/index.html'));
 });
 
-app.use(history({htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'], disableDotRule: true})); // Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
+app.use(history({htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'], disableDotRule: false})); // Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
 
 /**
  * Serve files in /dist directory
