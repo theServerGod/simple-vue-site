@@ -128,7 +128,7 @@ app.get('/api/captcha', function(req, res) {
  * Serve index / root page
  */
 app.get('/', function(req, res) {
-	res.sendFile(path.join(config.DOCUMENT_ROOT, 'dist/index.html'));
+	res.sendFile(path.join(config.DIST, 'index.html'));
 });
 
 app.use(history({htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'], disableDotRule: false})); // Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
