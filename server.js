@@ -61,7 +61,7 @@ app.post('/api/contact', function(req, res) {
 	async()
 		.then(function(next) {
 			// Sanity check
-			if (!req.body.name && !req.body.email && !req.body.message && !req.body.captcha)
+			if (!req.body.name || !req.body.email || !req.body.message || !req.body.captcha)
 				return next('Insufficient form data given - all fields are required');
 
 			next();
