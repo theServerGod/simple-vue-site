@@ -44,7 +44,7 @@ module.exports = function(env) {
 
 				{
 					test: /\.css$/,
-					loader: ExtractTextPlugin.extract({loader: 'css-loader?minimize'}),
+					loader: ExtractTextPlugin.extract({loader: 'css-loader?minimize', publicPath: '/'}),
 				},
 
 				{
