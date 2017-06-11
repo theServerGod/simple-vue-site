@@ -14,7 +14,7 @@ npm install
 npm run dev
 
 # Run server
-npm run start
+npm start
 ```
 
 ### Production
