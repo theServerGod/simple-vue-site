@@ -1,7 +1,7 @@
 # Simple Vue Site Project Seed
 > Project template/seed for static sites and small web applications, using [Vue.js](https://vuejs.org/).
 
-Please note: this project seed is intended for simple/small projects and favours simpler configuration over larger, more scalable configurations. As such, there is currently no OOTB support for live-reloading, Webpack Hot Module Replacement, unit-testing, etc.
+Please note: this project seed is intended for simple/small projects and favours simpler configuration over larger, more scalable configurations. As such, there is currently no OOTB support for live-reloading, Webpack Hot Module Replacement, complex testing, etc.
 
 ## Getting Started
 
@@ -15,6 +15,9 @@ npm run dev
 
 # Run server
 npm start
+
+# Run tests (ensure server is running first)
+npm test
 ```
 
 ### Production
