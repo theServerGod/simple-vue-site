@@ -10,7 +10,7 @@ Please note: this project seed is intended for simple/small projects and favours
 # Install both main and dev dependencies
 npm install
 
-# Build project assets and run webpack under watch mode
+# Build project assets and run Webpack under watch mode
 npm run dev
 
 # Run server
@@ -20,6 +20,8 @@ npm start
 npm test
 ```
 
+Typically, during development, you would want to have the Webpack watch mode and server running at the same time.
+
 ### Production
 Typically, all that is needed for app deployment are the contents of the build directory `dist/`, the `server.js` file, and the `package.json` file. Otherwise, if you wish to perform builds on the server, you need to pull in the entire repo/project codebase.
 
@@ -27,12 +29,14 @@ Typically, all that is needed for app deployment are the contents of the build d
 # Install production dependencies (assuming `dist/` already built)
 npm install --production
 # OR
-# Build project assets
+# Install all dependencies and build project assets
 npm install && npm run build
 
 # Launch server using all CPUs available (assuming PM2 as process monitor)
 pm2 start server.js -i 0 --name "app-name"
 ```
+
+Note the port that the server is running on as indicated in the output logs. To run multiple instances or sites on one VPS, simply change the port number for each site and configure your reverse proxy (e.g. Nginx) accordingly.
 
 ## Generating Thumbnails for Image Assets
 A utility BASH script is provided at `assets/gallery/generate_thumbs.bash` that will generate thumbnails for all jpg/png images present in the directory the script is run from. Thubmnail filenames have the following convention:

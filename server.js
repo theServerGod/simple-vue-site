@@ -36,6 +36,9 @@ app.use(session({
 	}
 }));
 
+/**
+ * Server app configuration
+ */
 const config = {
 	TITLE: 'Simple Vue Site', // FIXME: Change to you app name
 	ENV: process.env.NODE_ENV || 'development',
@@ -52,7 +55,7 @@ const config = {
 // Endpoints {{{
 
 /**
- * Process contact form submission and dispatch email
+ * Processes contact form submission and dispatches email
  * @param {string} req.body.name Name of contacting user
  * @param {string} req.body.email Email of contacting user
  * @param {string} req.body.message Message body
@@ -110,7 +113,10 @@ app.post('/api/contact', function(req, res) {
 		});
 });
 
-
+/**
+ * Generates CAPTCHA image
+ * @return {svg} Generated CAPTCHA image
+ */
 app.get('/api/captcha', function(req, res) {
 	var svgCaptcha = require('svg-captcha');
 	var captcha = svgCaptcha.create();
@@ -125,7 +131,7 @@ app.get('/api/captcha', function(req, res) {
 // Pages {{{
 
 /**
- * Serve index / root page
+ * Serves index / root page
  */
 app.get('/', function(req, res) {
 	res.sendFile(path.join(config.DIST, 'index.html'));
@@ -134,7 +140,7 @@ app.get('/', function(req, res) {
 app.use(history({htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'], disableDotRule: false})); // Reroute all other GET requests to index, to be handled by front end router using HTML5 History API
 
 /**
- * Serve files in /dist directory
+ * Serves files in /dist directory
  *
  * NOTE: If available under your infrastructure setup, it would be better to
  * serve static files over Nginx or Apache, for example.
@@ -146,7 +152,7 @@ app.use(express.static(config.DIST));
 // Error handling {{{
 // 404
 app.use(function(req, res, next) {
-	res.status(404).send('Sorry cant find that!');
+	res.status(404).send("Sorry can't find that!");
 });
 
 // 500
@@ -156,9 +162,11 @@ app.use(function(err, req, res, next) {
 });
 // }}}
 
+// Start server {{{
 app.listen(config.PORT, function() {
 	if (config.ENV === 'production')
-		console.log(colors.bold.green(`Server started under PRODUCTION mode, listening at ${config.DOMAIN}:${config.PORT}`));
+		console.log(colors.bold.green(`Server started under ${colors.bold.red('PRODUCTION')} mode, listening at ${config.DOMAIN}:${config.PORT}`));
 	else
 		console.log(colors.bold.green(`Server started under development mode, listening at http://localhost:${config.PORT}`));
 });
+// }}}
