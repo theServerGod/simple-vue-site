@@ -42,7 +42,7 @@ app.use(session({
 const config = {
 	TITLE: 'Simple Vue Site', // FIXME: Change to you app name
 	ENV: process.env.NODE_ENV || 'development',
-	PORT: process.env.PORT || 8080,
+	PORT: process.env.PORT || 8080, // FIXME: Change default port if required
 	DOCUMENT_ROOT: __dirname,
 	DIST: path.resolve(__dirname, 'dist'),
 	DOMAIN: 'example.com', // FIXME: Change to your domain

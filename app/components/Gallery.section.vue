@@ -1,6 +1,6 @@
 <template>
 	<section class="gallery">
-		<div class="image" v-for="img in images" v-once>
+		<div class="image" v-for="(img, index) in images" v-bind:key="index" v-once>
 			<a v-bind:href="img.src">
 				<img v-bind:src="img.thumb || img.src">
 			</a>
@@ -10,7 +10,7 @@
 
 <script>
 // Import gallery images {{{
-let images = [];
+var images = [];
 
 /**
 * Imports both original and thumbnail versions of an image, given a Webpack require-context
@@ -19,7 +19,12 @@ let images = [];
 */
 function importImages(r) {
 	// Extract thumbnail images
-	let thumbs = r.keys().filter(img => img.match(/.+\.thumb\..+/));
+	var thumbs = r.keys().filter(img => img.match(/.+\.thumb\..+/));
+
+	// If no thumbnails found, only import original image files
+	if (!thumbs || !thumbs.length) {
+		return r.keys().forEach(img => images.push({src: r(img)}));
+	}
 
 	// Given thumbnail name, find original image and add both to the image collection
 	thumbs.forEach(thumb => {
