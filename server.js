@@ -39,6 +39,7 @@ app.use(session({
 /**
  * Server app configuration
  */
+// NOTE: Current config structure is expected to contain private information (e.g. API keys, etc.)
 const config = {
 	TITLE: 'Simple Vue Site', // FIXME: Change to you app name
 	ENV: process.env.NODE_ENV || 'development',
@@ -158,7 +159,7 @@ app.use(function(req, res, next) {
 // 500
 app.use(function(err, req, res, next) {
 	console.error(err.stack);
-	res.status(500).send('Something broke!');
+	res.status(500).send('Oops, something broke!');
 });
 // }}}
 
